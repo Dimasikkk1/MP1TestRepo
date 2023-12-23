@@ -1,0 +1,26 @@
+﻿@page "/registry"
+@attribute [TabItemOption(Text = "Реестр заказов")]
+@using MP.Models
+@inject MPContext MPContext
+
+<PageTitle>Реестр заказов</PageTitle>
+
+<h1>Реестр заказов</h1>
+
+<Table @ref="Table" TItem="Order" OnQueryAsync="@OnQueryAsync" OnEditAsync="@OnEditAsync"
+       ShowTopPagination="true"
+       IsPagination="false" class="table-demo" ShowFilterHeader="false" IsAutoRefresh="true" AutoRefreshInterval="1000"
+       IsStriped="true" IsBordered="true" ShowSkeleton="true" IsMultipleSelect="false"
+       ShowToolbar="true" ShowSearch="true" ShowExtendButtons="false" EditMode="EditMode.EditForm"
+       DoubleClickToEdit="true">
+    <TableColumns>
+        <TableColumn @bind-Field="@context.Id" Visible="true" Searchable="true" />
+        <TableColumn @bind-Field="@context.Year" Text="Год" />
+        <TableColumn @bind-Field="@context.Quarter" Text="Квартал" Filterable="true" Searchable="true" />
+        <TableColumn @bind-Field="@context.OrderNumber" Text="№" Searchable="true" Filterable="true" />
+        <TableColumn @bind-Field="@context.ReleaseMonth" Text="Месяц списания" Filterable="true" Searchable="true" />
+        <TableColumn @bind-Field="@context.ProductName" Text="Наименование" Filterable="true" Searchable="true" />
+        <TableColumn @bind-Field="@context.Quantity" Text="Кол-во" Filterable="true" Searchable="true" />
+        <TableColumn @bind-Field="@context.Price" Text="Цена (без НДС)" Filterable="true" />
+    </TableColumns>
+</Table>
