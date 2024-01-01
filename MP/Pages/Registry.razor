@@ -21,6 +21,6 @@
         <TableColumn @bind-Field="@context.ReleaseMonth" Text="Месяц списания" Filterable="true" Searchable="true" />
         <TableColumn @bind-Field="@context.ProductName" Text="Наименование" Filterable="true" Searchable="true" />
         <TableColumn @bind-Field="@context.Quantity" Text="Кол-во" Filterable="true" Searchable="true" />
-        <TableColumn @bind-Field="@context.Price" Text="Цена (без НДС)" Filterable="true" />
+        <TableColumn @bind-Field="@context.Price" Text="Цена (без НДС)" Filterable="true" Step="0.01" />
     </TableColumns>
 </Table>

@@ -8,17 +8,19 @@
 
   <ItemGroup>
     <Content Remove="Locales\en.json" />
+    <Content Remove="Locales\ru.json" />
     <Content Remove="Locales\zh.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Locales\en.json" />
+    <EmbeddedResource Include="Locales\ru.json" />
     <EmbeddedResource Include="Locales\zh.json" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="35.0.1" />
-    <PackageReference Include="BootstrapBlazor" Version="8.0.6" />
+    <PackageReference Include="BootstrapBlazor" Version="8.0.7-beta03" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
   </ItemGroup>
 

@@ -1,5 +1,7 @@
 ﻿using Bogus;
+using BootstrapBlazor.Components;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Localization;
 using MP.Data;
 using MP.Models;
 using System.Text;
@@ -56,5 +58,7 @@ var testOrders = faker.Generate(1000);
 
 mpContext.Orders.AddRange(testOrders);
 #endregion
+
+var strings = app.Services.GetRequiredService<IStringLocalizer<TableFilter>>().GetAllStrings();
 
 app.Run();
